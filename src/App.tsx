@@ -130,7 +130,7 @@ function App() {
           </motion.div>
 
           {/* Text and Buttons */}
-          <div className="absolute bottom-8 sm:bottom-12 md:bottom-16 left-0 right-0 px-4 sm:px-8 md:px-16 mx-auto text-center sm:text-left sm:left-0 sm:right-auto max-w-[90%] sm:max-w-[80%] md:max-w-[24rem] z-10">
+          <div className="absolute bottom-8 sm:bottom-12 md:bottom-16 left-0 right-0 px-4 sm:px-8 md:px-16 mx-auto text-center sm:text-left sm:left-0 sm:right-auto max-w-[90%] sm:max-w-[80%] md:max-w-[32rem] z-10">
             <div className="space-y-0 mb-4 sm:mb-6">
               <motion.p 
                 className="text-[14px] sm:text-[16.59px] leading-[20px] sm:leading-[25.2px] tracking-normal font-medium"
