@@ -91,16 +91,12 @@ function App() {
         {/* Navigation */}
         <nav className="absolute top-0 w-full flex justify-between items-center p-4 sm:p-6 z-20">
           <motion.div 
-            className="w-10 h-10 sm:w-12 sm:h-12"
+            className="w-6 h-6 sm:w-7 sm:h-7 bg-white rounded-full flex items-center justify-center"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <img 
-              src="https://i.ibb.co/zVNvB2k9/sz-Ho-M2-H42j-Lyqq1-IQCCgdc25c.png" 
-              alt="Logo" 
-              className="w-full h-full rounded-full"
-            />
+            {/* White circle as logo */}
           </motion.div>
           <motion.div 
             className="flex gap-4 sm:gap-8"
