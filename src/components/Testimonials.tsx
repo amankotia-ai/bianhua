@@ -50,7 +50,7 @@ export function Testimonials() {
           }}
         >
           <div 
-            className="flex space-x-6 md:space-x-8 pl-0 pr-8"
+            className="flex space-x-2 md:space-x-8 pl-0 pr-8"
             style={{ 
               WebkitOverflowScrolling: 'touch'
             }}
