@@ -188,7 +188,7 @@ function App() {
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false, margin: "-20% 0px -20% 0px" }}
+            viewport={{ once: true, margin: "-10% 0px" }}
             variants={{
               hidden: { opacity: 0 },
               visible: {
@@ -274,7 +274,7 @@ function App() {
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false, margin: "-20% 0px -20% 0px" }}
+            viewport={{ once: true, margin: "-10% 0px" }}
             variants={{
               hidden: { opacity: 0 },
               visible: {

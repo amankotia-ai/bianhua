@@ -12,7 +12,7 @@ export function AnimatedGroupPreset() {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
+        if (entry.isIntersecting && !isVisible) {
           setIsVisible(true);
         }
       },
@@ -31,7 +31,7 @@ export function AnimatedGroupPreset() {
         observer.unobserve(ref.current);
       }
     };
-  }, []);
+  }, [isVisible]);
   
   const images = [
     {
