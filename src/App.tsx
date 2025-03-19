@@ -168,12 +168,12 @@ function App() {
               }}
             >
               <button 
-                className="flex-1 sm:flex-initial px-3 sm:px-6 py-2 text-[12px] sm:text-[16px] border border-white rounded-full hover:bg-white hover:text-black transition-colors whitespace-nowrap"
+                className="w-auto px-4 sm:px-6 py-2 text-[14px] font-semibold sm:text-[16px] border border-white rounded-full hover:bg-white hover:text-black transition-colors whitespace-nowrap"
                 onClick={() => setIsContactModalOpen(true)}
               >
                 Contact Bianhua
               </button>
-              <button className="flex-1 sm:flex-initial px-3 sm:px-6 py-2 text-[12px] sm:text-[16px] flex items-center justify-center gap-1 sm:gap-2 hover:text-gray-300 transition-colors whitespace-nowrap">
+              <button className="w-auto px-4 sm:px-6 py-2 text-[14px] font-semibold sm:text-[16px] flex items-center justify-center gap-1 sm:gap-2 hover:text-gray-300 transition-colors whitespace-nowrap">
                 View Expertise
                 <ArrowRight className="w-3 h-3 sm:w-5 sm:h-5" />
               </button>
@@ -395,7 +395,7 @@ function App() {
               className="pt-4 sm:pt-8"
             >
               <button 
-                className="px-6 py-2 text-[14px] sm:text-[16px] border border-white rounded-full hover:bg-white hover:text-black transition-colors"
+                className="w-auto px-4 sm:px-6 py-2 text-[14px] font-semibold sm:text-[16px] border border-white rounded-full hover:bg-white hover:text-black transition-colors"
                 onClick={() => setIsContactModalOpen(true)}
               >
                 Contact Bianhua
