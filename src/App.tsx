@@ -5,10 +5,12 @@ import '@fontsource/inter/500.css';
 import '@fontsource/inter/600.css';
 import { ArrowRight, Image, Award, Briefcase, GraduationCap, Shirt, Smile, MessageSquare, Palette, Users, CircleDot, Building, HeadphonesIcon, Video, Scissors } from 'lucide-react';
 import { AnimatedGroupPreset } from './components/AnimatedGroupDemo';
+import { ContactModal } from './components/ContactModal';
 
 function App() {
   const { scrollY } = useScroll();
   const [windowHeight, setWindowHeight] = useState(0);
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   
   // Update window height on client side
   useEffect(() => {
@@ -75,6 +77,12 @@ function App() {
 
   return (
     <div className="bg-black text-white font-inter overflow-x-hidden">
+      {/* Contact Modal */}
+      <ContactModal 
+        isOpen={isContactModalOpen} 
+        onClose={() => setIsContactModalOpen(false)} 
+      />
+      
       {/* Hero Section */}
       <motion.section 
         style={{ opacity: heroOpacity }}
@@ -163,7 +171,10 @@ function App() {
                 delay: 1.2
               }}
             >
-              <button className="px-4 sm:px-6 py-2 text-[14px] sm:text-[16px] border border-white rounded-full hover:bg-white hover:text-black transition-colors">
+              <button 
+                className="px-4 sm:px-6 py-2 text-[14px] sm:text-[16px] border border-white rounded-full hover:bg-white hover:text-black transition-colors"
+                onClick={() => setIsContactModalOpen(true)}
+              >
                 Contact Bianhua
               </button>
               <button className="px-4 sm:px-6 py-2 text-[14px] sm:text-[16px] flex items-center justify-center sm:justify-start gap-2 hover:text-gray-300 transition-colors">
@@ -387,7 +398,10 @@ function App() {
               }}
               className="pt-4 sm:pt-8"
             >
-              <button className="px-6 py-2 text-[14px] sm:text-[16px] border border-white rounded-full hover:bg-white hover:text-black transition-colors">
+              <button 
+                className="px-6 py-2 text-[14px] sm:text-[16px] border border-white rounded-full hover:bg-white hover:text-black transition-colors"
+                onClick={() => setIsContactModalOpen(true)}
+              >
                 Contact Bianhua
               </button>
             </motion.div>
