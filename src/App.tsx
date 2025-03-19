@@ -7,6 +7,8 @@ import { ArrowRight, Image, Award, Briefcase, GraduationCap, Shirt, Smile, Messa
 import { AnimatedGroupPreset } from './components/AnimatedGroupDemo';
 import { ContactModal } from './components/ContactModal';
 import { Testimonials } from './components/Testimonials';
+import { Partners } from './components/Partners';
+import { LetsConnect } from './components/LetsConnect';
 
 function App() {
   const { scrollY } = useScroll();
@@ -500,8 +502,14 @@ function App() {
         </div>
       </motion.section>
 
+      {/* Partners Section */}
+      <Partners />
+
       {/* Testimonials Section */}
       <Testimonials />
+      
+      {/* Let's Connect Section */}
+      <LetsConnect />
     </div>
   );
 }
