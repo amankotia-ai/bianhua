@@ -64,7 +64,7 @@ export function AnimatedGroupPreset() {
     <div ref={ref}>
       {isVisible && (
         <AnimatedGroup
-          className="grid grid-cols-2 gap-1 sm:gap-2 md:gap-4 px-1 sm:px-4 md:px-6 py-0 sm:py-4 md:py-6 md:grid-cols-3 lg:grid-cols-4"
+          className="grid grid-cols-2 gap-2 sm:gap-2 md:gap-4 px-1 sm:px-4 md:px-6 py-0 sm:py-4 md:py-6 md:grid-cols-3 lg:grid-cols-4"
           preset="scale"
         >
           {images.map((image, index) => (
