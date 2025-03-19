@@ -43,14 +43,14 @@ export function Testimonials() {
 
         {/* Testimonials horizontal scroll */}
         <div 
-          className="relative overflow-x-auto pb-4" 
+          className="relative overflow-x-auto pb-4 -mx-4 px-4" 
           style={{ 
             scrollbarWidth: 'none',
             msOverflowStyle: 'none'
           }}
         >
           <div 
-            className="flex space-x-6 md:space-x-8 pl-0 pr-4"
+            className="flex space-x-6 md:space-x-8 pl-0 pr-8"
             style={{ 
               WebkitOverflowScrolling: 'touch'
             }}
@@ -58,7 +58,7 @@ export function Testimonials() {
             {/* First testimonial */}
             <motion.div 
               variants={fadeInVariants}
-              className="bg-[#212020] rounded-[4px] p-6 sm:p-8 flex flex-col w-[85%] sm:w-[350px] md:w-[450px] flex-shrink-0"
+              className="bg-[#212020] rounded-[4px] p-6 sm:p-8 flex flex-col w-[80%] sm:w-[320px] md:w-[420px] flex-shrink-0"
             >
               <div className="flex-grow">
                 <p className="text-[16px] sm:text-[18px] leading-relaxed text-white font-medium mb-8">
@@ -73,7 +73,7 @@ export function Testimonials() {
             {/* Second testimonial */}
             <motion.div 
               variants={fadeInVariants}
-              className="bg-[#212020] rounded-[4px] p-6 sm:p-8 flex flex-col w-[85%] sm:w-[350px] md:w-[450px] flex-shrink-0"
+              className="bg-[#212020] rounded-[4px] p-6 sm:p-8 flex flex-col w-[80%] sm:w-[320px] md:w-[420px] flex-shrink-0"
             >
               <div className="flex-grow">
                 <p className="text-[16px] sm:text-[18px] leading-relaxed text-white font-medium mb-8">
@@ -89,7 +89,7 @@ export function Testimonials() {
             {/* Optional: Add more testimonials */}
             <motion.div 
               variants={fadeInVariants}
-              className="bg-[#212020] rounded-[4px] p-6 sm:p-8 flex flex-col w-[85%] sm:w-[350px] md:w-[450px] flex-shrink-0"
+              className="bg-[#212020] rounded-[4px] p-6 sm:p-8 flex flex-col w-[80%] sm:w-[320px] md:w-[420px] flex-shrink-0"
             >
               <div className="flex-grow">
                 <p className="text-[16px] sm:text-[18px] leading-relaxed text-white font-medium mb-8">
