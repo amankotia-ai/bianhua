@@ -1,7 +1,57 @@
-import React from 'react';
-import { motion, Variants } from 'framer-motion';
+import React, { useEffect, useRef, useState } from 'react';
+import { motion, Variants, useScroll, useTransform } from 'framer-motion';
 
 export function Testimonials() {
+  const { scrollY } = useScroll();
+  const [windowHeight, setWindowHeight] = useState(0);
+  const [testimonialSectionY, setTestimonialSectionY] = useState(0);
+  const testimonialSectionRef = useRef<HTMLElement>(null);
+  const testimonialContentRef = useRef<HTMLDivElement>(null);
+  const [hasTestimonialShownOnce, setHasTestimonialShownOnce] = useState(false);
+  
+  // Update window height on client side
+  useEffect(() => {
+    setWindowHeight(window.innerHeight);
+    const handleResize = () => setWindowHeight(window.innerHeight);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // Update testimonial section position
+  useEffect(() => {
+    if (testimonialSectionRef.current) {
+      const rect = testimonialSectionRef.current.getBoundingClientRect();
+      setTestimonialSectionY(window.scrollY + rect.top);
+    }
+    
+    const handleScroll = () => {
+      if (testimonialSectionRef.current) {
+        const rect = testimonialSectionRef.current.getBoundingClientRect();
+        setTestimonialSectionY(window.scrollY + rect.top);
+      }
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleScroll);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
+    };
+  }, []);
+  
+  // Testimonial section opacity based on scroll position
+  const testimonialOpacity = useTransform(
+    scrollY,
+    [
+      testimonialSectionY - windowHeight * 0.8, // Start fading in
+      testimonialSectionY - windowHeight * 0.3, // Fully visible
+      testimonialSectionY + windowHeight * 0.5, // Start fading out
+      testimonialSectionY + windowHeight * 0.9  // Fully invisible
+    ],
+    [0, 1, 1, 0]
+  );
+
   const fadeInVariants: Variants = {
     hidden: {
       opacity: 0,
@@ -17,12 +67,20 @@ export function Testimonials() {
   };
 
   return (
-    <section className="min-h-fit py-16 sm:py-20 px-4 sm:px-8 md:px-16 bg-[#030706]">
-      <div className="max-w-[95%] sm:max-w-[80%] md:max-w-[40rem] mx-auto">
+    <motion.section 
+      ref={testimonialSectionRef}
+      style={{ opacity: testimonialOpacity }}
+      className="min-h-fit py-16 sm:py-20 px-4 sm:px-8 md:px-16 bg-[#030706]"
+    >
+      <div 
+        ref={testimonialContentRef}
+        className="max-w-[95%] sm:max-w-[80%] md:max-w-[40rem] mx-auto"
+      >
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, margin: "-20% 0px -20% 0px" }}
+          viewport={{ once: true, margin: "-20% 0px -20% 0px" }}
+          onAnimationComplete={() => setHasTestimonialShownOnce(true)}
           variants={{
             hidden: { opacity: 0 },
             visible: {
@@ -156,6 +214,6 @@ export function Testimonials() {
           </div>
         </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 } 

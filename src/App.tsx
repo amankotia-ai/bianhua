@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { motion, Variants, useScroll, useTransform } from 'framer-motion';
 import '@fontsource/inter';
 import '@fontsource/inter/500.css';
@@ -12,6 +12,14 @@ function App() {
   const { scrollY } = useScroll();
   const [windowHeight, setWindowHeight] = useState(0);
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+  const [expertiseSectionY, setExpertiseSectionY] = useState(0);
+  const expertiseSectionRef = useRef<HTMLElement>(null);
+  const expertiseContentRef = useRef<HTMLDivElement>(null);
+  const [hasExpertiseShownOnce, setHasExpertiseShownOnce] = useState(false);
+  const [aboutSectionY, setAboutSectionY] = useState(0);
+  const aboutSectionRef = useRef<HTMLElement>(null);
+  const aboutContentRef = useRef<HTMLDivElement>(null);
+  const [hasAboutShownOnce, setHasAboutShownOnce] = useState(false);
   
   // Update window height on client side
   useEffect(() => {
@@ -20,12 +28,82 @@ function App() {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
+
+  // Update expertise section position
+  useEffect(() => {
+    if (expertiseSectionRef.current) {
+      const rect = expertiseSectionRef.current.getBoundingClientRect();
+      setExpertiseSectionY(window.scrollY + rect.top);
+    }
+    
+    const handleScroll = () => {
+      if (expertiseSectionRef.current) {
+        const rect = expertiseSectionRef.current.getBoundingClientRect();
+        setExpertiseSectionY(window.scrollY + rect.top);
+      }
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleScroll);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
+    };
+  }, []);
+  
+  // Update about section position
+  useEffect(() => {
+    if (aboutSectionRef.current) {
+      const rect = aboutSectionRef.current.getBoundingClientRect();
+      setAboutSectionY(window.scrollY + rect.top);
+    }
+    
+    const handleScroll = () => {
+      if (aboutSectionRef.current) {
+        const rect = aboutSectionRef.current.getBoundingClientRect();
+        setAboutSectionY(window.scrollY + rect.top);
+      }
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleScroll);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
+    };
+  }, []);
   
   // Hero section opacity based on scroll position
   const heroOpacity = useTransform(
     scrollY, 
     [0, windowHeight * 0.5, windowHeight * 0.8], 
     [1, 0.8, 0]
+  );
+
+  // Expertise section opacity based on scroll position
+  const expertiseOpacity = useTransform(
+    scrollY,
+    [
+      expertiseSectionY - windowHeight * 0.8, // Start fading in
+      expertiseSectionY - windowHeight * 0.3, // Fully visible
+      expertiseSectionY + windowHeight * 0.5, // Start fading out
+      expertiseSectionY + windowHeight * 0.9  // Fully invisible
+    ],
+    [0, 1, 1, 0]
+  );
+
+  // About section opacity based on scroll position
+  const aboutOpacity = useTransform(
+    scrollY,
+    [
+      aboutSectionY - windowHeight * 0.8, // Start fading in
+      aboutSectionY - windowHeight * 0.3, // Fully visible
+      aboutSectionY + windowHeight * 0.5, // Start fading out
+      aboutSectionY + windowHeight * 0.9  // Fully invisible
+    ],
+    [0, 1, 1, 0]
   );
 
   // Word animation for text
@@ -184,12 +262,20 @@ function App() {
       </motion.section>
 
       {/* About Section */}
-      <section className="min-h-[70vh] sm:min-h-[85vh] md:min-h-screen py-8 pb-0 sm:pb-2 md:pb-6 sm:py-12 md:py-16 px-2 sm:px-8 md:px-16">
-        <div className="max-w-[95%] sm:max-w-[80%] md:max-w-[40rem] mx-auto">
+      <motion.section
+        ref={aboutSectionRef}
+        style={{ opacity: aboutOpacity }}
+        className="min-h-[70vh] sm:min-h-[85vh] md:min-h-screen py-8 pb-0 sm:pb-2 md:pb-6 sm:py-12 md:py-16 px-2 sm:px-8 md:px-16"
+      >
+        <div 
+          ref={aboutContentRef}
+          className="max-w-[95%] sm:max-w-[80%] md:max-w-[40rem] mx-auto"
+        >
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false, margin: "-20% 0px -20% 0px" }}
+            viewport={{ once: true, margin: "-20% 0px -20% 0px" }}
+            onAnimationComplete={() => setHasAboutShownOnce(true)}
             variants={{
               hidden: { opacity: 0 },
               visible: {
@@ -258,7 +344,7 @@ function App() {
             </motion.div>
           </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Animated Group Examples Section */}
       <section className="py-0 sm:py-4 md:py-8">
@@ -270,12 +356,20 @@ function App() {
       </section>
 
       {/* Areas of Expertise Section */}
-      <section className="min-h-fit py-12 sm:py-16 md:py-20 px-2 sm:px-8 md:px-16 bg-[#030706]">
-        <div className="max-w-[95%] sm:max-w-[80%] md:max-w-[40rem] mx-auto">
+      <motion.section 
+        ref={expertiseSectionRef}
+        style={{ opacity: expertiseOpacity }}
+        className="min-h-fit py-12 sm:py-16 md:py-20 px-2 sm:px-8 md:px-16 bg-[#030706]"
+      >
+        <div 
+          ref={expertiseContentRef} 
+          className="max-w-[95%] sm:max-w-[80%] md:max-w-[40rem] mx-auto"
+        >
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false, margin: "-20% 0px -20% 0px" }}
+            viewport={{ once: true, margin: "-20% 0px -20% 0px" }}
+            onAnimationComplete={() => setHasExpertiseShownOnce(true)}
             variants={{
               hidden: { opacity: 0 },
               visible: {
@@ -404,7 +498,7 @@ function App() {
             </motion.div>
           </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Testimonials Section */}
       <Testimonials />

@@ -13,7 +13,9 @@ export function AnimatedGroupPreset() {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true);
+          setTimeout(() => {
+            setIsVisible(true);
+          }, 400);
         }
       },
       { 
@@ -66,6 +68,29 @@ export function AnimatedGroupPreset() {
         <AnimatedGroup
           className="grid grid-cols-2 gap-2 sm:gap-2 md:gap-4 px-1 sm:px-4 md:px-6 py-0 sm:py-4 md:py-6 md:grid-cols-3 lg:grid-cols-4"
           preset="scale"
+          variants={{
+            container: {
+              hidden: { opacity: 0 },
+              visible: {
+                opacity: 1,
+                transition: {
+                  delayChildren: 0.3,
+                  staggerChildren: 0.1,
+                }
+              }
+            },
+            item: {
+              hidden: { opacity: 0, scale: 0.8 },
+              visible: {
+                opacity: 1,
+                scale: 1,
+                transition: {
+                  duration: 0.6,
+                  ease: [0.4, 0, 0.2, 1]
+                }
+              }
+            }
+          }}
         >
           {images.map((image, index) => (
             <div 
