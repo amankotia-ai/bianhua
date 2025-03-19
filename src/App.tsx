@@ -134,7 +134,7 @@ function App() {
           </motion.div>
 
           {/* Text and Buttons */}
-          <div className="absolute bottom-8 sm:bottom-12 md:bottom-16 left-4 sm:left-8 md:left-16 max-w-[90%] sm:max-w-[80%] md:max-w-[24rem] z-10">
+          <div className="absolute bottom-8 sm:bottom-12 md:bottom-16 left-0 right-0 px-4 sm:px-8 md:px-16 mx-auto text-center sm:text-left sm:left-0 sm:right-auto max-w-[90%] sm:max-w-[80%] md:max-w-[24rem] z-10">
             <div className="space-y-0 mb-4 sm:mb-6">
               <motion.p 
                 className="text-[14px] sm:text-[16.59px] leading-[20px] sm:leading-[25.2px] tracking-normal font-medium"
@@ -163,7 +163,7 @@ function App() {
             </div>
 
             <motion.div 
-              className="flex flex-col sm:flex-row gap-3"
+              className="flex flex-row gap-2 sm:gap-3 justify-center sm:justify-start"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ 
@@ -172,14 +172,14 @@ function App() {
               }}
             >
               <button 
-                className="px-4 sm:px-6 py-2 text-[14px] sm:text-[16px] border border-white rounded-full hover:bg-white hover:text-black transition-colors"
+                className="flex-1 sm:flex-initial px-3 sm:px-6 py-2 text-[12px] sm:text-[16px] border border-white rounded-full hover:bg-white hover:text-black transition-colors whitespace-nowrap"
                 onClick={() => setIsContactModalOpen(true)}
               >
                 Contact Bianhua
               </button>
-              <button className="px-4 sm:px-6 py-2 text-[14px] sm:text-[16px] flex items-center justify-center sm:justify-start gap-2 hover:text-gray-300 transition-colors">
+              <button className="flex-1 sm:flex-initial px-3 sm:px-6 py-2 text-[12px] sm:text-[16px] flex items-center justify-center gap-1 sm:gap-2 hover:text-gray-300 transition-colors whitespace-nowrap">
                 View Expertise
-                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
+                <ArrowRight className="w-3 h-3 sm:w-5 sm:h-5" />
               </button>
             </motion.div>
           </div>
