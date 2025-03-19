@@ -176,8 +176,8 @@ function App() {
       </motion.section>
 
       {/* About Section */}
-      <section className="min-h-[80vh] sm:min-h-[85vh] md:min-h-screen py-8 pb-0 sm:pb-2 md:pb-6 sm:py-12 md:py-16 px-4 sm:px-8 md:px-16">
-        <div className="max-w-[90%] sm:max-w-[80%] md:max-w-[40rem] mx-auto">
+      <section className="min-h-[70vh] sm:min-h-[85vh] md:min-h-screen py-8 pb-0 sm:pb-2 md:pb-6 sm:py-12 md:py-16 px-2 sm:px-8 md:px-16">
+        <div className="max-w-[95%] sm:max-w-[80%] md:max-w-[40rem] mx-auto">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -254,16 +254,16 @@ function App() {
 
       {/* Animated Group Examples Section */}
       <section className="py-0 sm:py-4 md:py-8">
-        <div className="container mx-auto">
-          <div>
+        <div className="px-1 sm:px-8 md:px-16 mx-auto">
+          <div className="max-w-[98%] sm:max-w-[80%] md:max-w-full mx-auto">
             <AnimatedGroupPreset />
           </div>
         </div>
       </section>
 
       {/* Areas of Expertise Section */}
-      <section className="min-h-screen py-12 sm:py-16 md:py-20 px-4 sm:px-8 md:px-16 bg-black">
-        <div className="max-w-[90%] sm:max-w-[80%] md:max-w-[40rem] mx-auto">
+      <section className="min-h-screen py-12 sm:py-16 md:py-20 px-2 sm:px-8 md:px-16 bg-black">
+        <div className="max-w-[95%] sm:max-w-[80%] md:max-w-[40rem] mx-auto">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -298,77 +298,77 @@ function App() {
                   }
                 }
               }}
-              className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-8"
+              className="grid grid-cols-2 gap-x-2 gap-y-6 sm:gap-x-8 sm:gap-y-8 md:gap-x-12"
             >
               {/* Expertise Items */}
-              <motion.div variants={fadeInUpVariants} className="flex items-center gap-3">
-                <Image className="w-5 h-5" />
-                <p className="text-[14px] sm:text-[15px] md:text-[16.59px] font-medium">Image Management</p>
+              <motion.div variants={fadeInUpVariants} className="flex items-center gap-2 sm:gap-3">
+                <Image className="w-4 h-4 sm:w-5 sm:h-5" />
+                <p className="text-[14px] sm:text-[14px] md:text-[16.59px] font-medium">Image Management</p>
               </motion.div>
               
-              <motion.div variants={fadeInUpVariants} className="flex items-center gap-3">
-                <Award className="w-5 h-5" />
-                <p className="text-[14px] sm:text-[15px] md:text-[16.59px] font-medium">Executive Presence</p>
+              <motion.div variants={fadeInUpVariants} className="flex items-center gap-2 sm:gap-3">
+                <Award className="w-4 h-4 sm:w-5 sm:h-5" />
+                <p className="text-[14px] sm:text-[14px] md:text-[16.59px] font-medium">Executive Presence</p>
               </motion.div>
               
-              <motion.div variants={fadeInUpVariants} className="flex items-center gap-3">
-                <Briefcase className="w-5 h-5" />
-                <p className="text-[14px] sm:text-[15px] md:text-[16.59px] font-medium">Interview Skills</p>
+              <motion.div variants={fadeInUpVariants} className="flex items-center gap-2 sm:gap-3">
+                <Briefcase className="w-4 h-4 sm:w-5 sm:h-5" />
+                <p className="text-[14px] sm:text-[14px] md:text-[16.59px] font-medium">Interview Skills</p>
               </motion.div>
               
-              <motion.div variants={fadeInUpVariants} className="flex items-center gap-3">
-                <GraduationCap className="w-5 h-5" />
-                <p className="text-[14px] sm:text-[15px] md:text-[16.59px] font-medium">Campus to Corporate</p>
+              <motion.div variants={fadeInUpVariants} className="flex items-center gap-2 sm:gap-3">
+                <GraduationCap className="w-4 h-4 sm:w-5 sm:h-5" />
+                <p className="text-[14px] sm:text-[14px] md:text-[16.59px] font-medium">Campus to Corporate</p>
               </motion.div>
               
-              <motion.div variants={fadeInUpVariants} className="flex items-center gap-3">
-                <Shirt className="w-5 h-5" />
-                <p className="text-[14px] sm:text-[15px] md:text-[16.59px] font-medium">Corporate Styling</p>
+              <motion.div variants={fadeInUpVariants} className="flex items-center gap-2 sm:gap-3">
+                <Shirt className="w-4 h-4 sm:w-5 sm:h-5" />
+                <p className="text-[14px] sm:text-[14px] md:text-[16.59px] font-medium">Corporate Styling</p>
               </motion.div>
               
-              <motion.div variants={fadeInUpVariants} className="flex items-center gap-3">
-                <Smile className="w-5 h-5" />
-                <p className="text-[14px] sm:text-[15px] md:text-[16.59px] font-medium">First Impressions</p>
+              <motion.div variants={fadeInUpVariants} className="flex items-center gap-2 sm:gap-3">
+                <Smile className="w-4 h-4 sm:w-5 sm:h-5" />
+                <p className="text-[14px] sm:text-[14px] md:text-[16.59px] font-medium">First Impressions</p>
               </motion.div>
               
-              <motion.div variants={fadeInUpVariants} className="flex items-center gap-3">
-                <MessageSquare className="w-5 h-5" />
-                <p className="text-[14px] sm:text-[15px] md:text-[16.59px] font-medium">Communication</p>
+              <motion.div variants={fadeInUpVariants} className="flex items-center gap-2 sm:gap-3">
+                <MessageSquare className="w-4 h-4 sm:w-5 sm:h-5" />
+                <p className="text-[14px] sm:text-[14px] md:text-[16.59px] font-medium">Communication</p>
               </motion.div>
               
-              <motion.div variants={fadeInUpVariants} className="flex items-center gap-3">
-                <Palette className="w-5 h-5" />
-                <p className="text-[14px] sm:text-[15px] md:text-[16.59px] font-medium">Personal Style and Wardrobe</p>
+              <motion.div variants={fadeInUpVariants} className="flex items-center gap-2 sm:gap-3">
+                <Palette className="w-4 h-4 sm:w-5 sm:h-5" />
+                <p className="text-[14px] sm:text-[14px] md:text-[16.59px] font-medium">Personal Style</p>
               </motion.div>
               
-              <motion.div variants={fadeInUpVariants} className="flex items-center gap-3">
-                <Users className="w-5 h-5" />
-                <p className="text-[14px] sm:text-[15px] md:text-[16.59px] font-medium">Business Etiquette</p>
+              <motion.div variants={fadeInUpVariants} className="flex items-center gap-2 sm:gap-3">
+                <Users className="w-4 h-4 sm:w-5 sm:h-5" />
+                <p className="text-[14px] sm:text-[14px] md:text-[16.59px] font-medium">Business Etiquette</p>
               </motion.div>
               
-              <motion.div variants={fadeInUpVariants} className="flex items-center gap-3">
-                <CircleDot className="w-5 h-5" />
-                <p className="text-[14px] sm:text-[15px] md:text-[16.59px] font-medium">Workplace Etiquette</p>
+              <motion.div variants={fadeInUpVariants} className="flex items-center gap-2 sm:gap-3">
+                <CircleDot className="w-4 h-4 sm:w-5 sm:h-5" />
+                <p className="text-[14px] sm:text-[14px] md:text-[16.59px] font-medium">Workplace Etiquette</p>
               </motion.div>
               
-              <motion.div variants={fadeInUpVariants} className="flex items-center gap-3">
-                <Building className="w-5 h-5" />
-                <p className="text-[14px] sm:text-[15px] md:text-[16.59px] font-medium">Corporate Communication</p>
+              <motion.div variants={fadeInUpVariants} className="flex items-center gap-2 sm:gap-3">
+                <Building className="w-4 h-4 sm:w-5 sm:h-5" />
+                <p className="text-[14px] sm:text-[14px] md:text-[16.59px] font-medium">Corp. Communication</p>
               </motion.div>
               
-              <motion.div variants={fadeInUpVariants} className="flex items-center gap-3">
-                <HeadphonesIcon className="w-5 h-5" />
-                <p className="text-[14px] sm:text-[15px] md:text-[16.59px] font-medium">Listening Skills</p>
+              <motion.div variants={fadeInUpVariants} className="flex items-center gap-2 sm:gap-3">
+                <HeadphonesIcon className="w-4 h-4 sm:w-5 sm:h-5" />
+                <p className="text-[14px] sm:text-[14px] md:text-[16.59px] font-medium">Listening Skills</p>
               </motion.div>
               
-              <motion.div variants={fadeInUpVariants} className="flex items-center gap-3">
-                <Video className="w-5 h-5" />
-                <p className="text-[14px] sm:text-[15px] md:text-[16.59px] font-medium">Virtual Meeting Etiquette</p>
+              <motion.div variants={fadeInUpVariants} className="flex items-center gap-2 sm:gap-3">
+                <Video className="w-4 h-4 sm:w-5 sm:h-5" />
+                <p className="text-[14px] sm:text-[14px] md:text-[16.59px] font-medium">Virtual Meetings</p>
               </motion.div>
               
-              <motion.div variants={fadeInUpVariants} className="flex items-center gap-3">
-                <Scissors className="w-5 h-5" />
-                <p className="text-[14px] sm:text-[15px] md:text-[16.59px] font-medium">Bespoke Clothing</p>
+              <motion.div variants={fadeInUpVariants} className="flex items-center gap-2 sm:gap-3">
+                <Scissors className="w-4 h-4 sm:w-5 sm:h-5" />
+                <p className="text-[14px] sm:text-[14px] md:text-[16.59px] font-medium">Bespoke Clothing</p>
               </motion.div>
             </motion.div>
             
