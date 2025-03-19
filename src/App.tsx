@@ -176,7 +176,7 @@ function App() {
       </motion.section>
 
       {/* About Section */}
-      <section className="min-h-screen py-12 sm:py-16 md:py-20 px-4 sm:px-8 md:px-16">
+      <section className="min-h-screen py-12 pb-4 sm:pb-8 md:pb-12 sm:py-16 md:py-20 px-4 sm:px-8 md:px-16">
         <div className="max-w-[90%] sm:max-w-[80%] md:max-w-[40rem] mx-auto">
           <motion.div
             initial="hidden"
@@ -253,7 +253,7 @@ function App() {
       </section>
 
       {/* Animated Group Examples Section */}
-      <section className="py-16">
+      <section className="py-4 sm:py-8 md:py-16">
         <div className="container mx-auto">
           <div>
             <AnimatedGroupPreset />
