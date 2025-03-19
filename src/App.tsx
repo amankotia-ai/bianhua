@@ -270,7 +270,7 @@ function App() {
       </section>
 
       {/* Areas of Expertise Section */}
-      <section className="min-h-fit py-12 sm:py-16 md:py-20 px-2 sm:px-8 md:px-16 bg-black">
+      <section className="min-h-fit py-12 sm:py-16 md:py-20 px-2 sm:px-8 md:px-16 bg-[#030706]">
         <div className="max-w-[95%] sm:max-w-[80%] md:max-w-[40rem] mx-auto">
           <motion.div
             initial="hidden"
