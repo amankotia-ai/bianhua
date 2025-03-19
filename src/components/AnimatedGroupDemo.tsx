@@ -17,8 +17,8 @@ export function AnimatedGroupPreset() {
         }
       },
       { 
-        threshold: 1.0,
-        rootMargin: "0px 0px -30% 0px" 
+        threshold: 0.1,
+        rootMargin: "0px 0px -10% 0px" 
       }
     );
     
@@ -64,7 +64,7 @@ export function AnimatedGroupPreset() {
     <div ref={ref}>
       {isVisible && (
         <AnimatedGroup
-          className="grid grid-cols-2 gap-2 sm:gap-3 md:gap-4 p-4 sm:p-6 md:p-8 md:grid-cols-3 lg:grid-cols-4"
+          className="grid grid-cols-2 gap-1 sm:gap-2 md:gap-4 p-1 sm:p-4 md:p-6 md:grid-cols-3 lg:grid-cols-4"
           preset="scale"
         >
           {images.map((image, index) => (

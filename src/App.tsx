@@ -176,7 +176,7 @@ function App() {
       </motion.section>
 
       {/* About Section */}
-      <section className="min-h-screen py-12 pb-4 sm:pb-8 md:pb-12 sm:py-16 md:py-20 px-4 sm:px-8 md:px-16">
+      <section className="min-h-[80vh] sm:min-h-[85vh] md:min-h-screen py-8 pb-0 sm:pb-2 md:pb-6 sm:py-12 md:py-16 px-4 sm:px-8 md:px-16">
         <div className="max-w-[90%] sm:max-w-[80%] md:max-w-[40rem] mx-auto">
           <motion.div
             initial="hidden"
@@ -191,7 +191,7 @@ function App() {
                 }
               }
             }}
-            className="space-y-8 sm:space-y-12 md:space-y-16"
+            className="space-y-4 sm:space-y-8 md:space-y-12"
           >
             {/* Title */}
             <motion.h2
@@ -228,7 +228,7 @@ function App() {
                   }
                 }
               }}
-              className="flex flex-row justify-between gap-4 py-4 sm:py-8"
+              className="flex flex-row justify-between gap-4 py-0 sm:py-2 md:py-4"
             >
               {/* 80+ */}
               <motion.div variants={fadeInUpVariants} className="flex flex-col items-center">
@@ -253,7 +253,7 @@ function App() {
       </section>
 
       {/* Animated Group Examples Section */}
-      <section className="py-4 sm:py-8 md:py-16">
+      <section className="py-0 sm:py-4 md:py-8">
         <div className="container mx-auto">
           <div>
             <AnimatedGroupPreset />
