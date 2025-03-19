@@ -16,3 +16,9 @@
     min-height: -webkit-fill-available;
   }
 }
+
+@layer utilities {
+  .bottom-8 {
+    bottom: 1rem;
+  }
+}
