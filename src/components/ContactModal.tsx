@@ -69,7 +69,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
             <h3 className="text-sm font-medium mb-3 text-gray-400">Stay in touch</h3>
             <div className="flex gap-3">
               <a 
-                href="https://instagram.com" 
+                href="https://www.instagram.com/bianhua_official_/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 w-full bg-[#161616] hover:bg-[#1c1c1c] text-white py-3 px-4 rounded-lg transition-colors text-sm"
@@ -78,7 +78,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
                 <span>Instagram</span>
               </a>
               <a 
-                href="https://linkedin.com" 
+                href="https://www.linkedin.com/in/jyoti-pathania-salwan-0ab4b678" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 w-full bg-[#161616] hover:bg-[#1c1c1c] text-white py-3 px-4 rounded-lg transition-colors text-sm"
