@@ -2,6 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-rgb: 3, 7, 6;
+}
+
+/* iOS safe area handling */
+body {
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  background-color: rgb(var(--background-rgb));
+  color: rgb(var(--foreground-rgb));
+}
+
+html, body, #root {
+  height: 100%;
+  background-color: rgb(var(--background-rgb));
+}
+
 @layer base {
   html, body {
     background-color: black;

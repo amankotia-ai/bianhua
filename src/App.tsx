@@ -76,7 +76,7 @@ function App() {
   const words2 = text2.split(" ");
 
   return (
-    <div className="bg-black text-white font-inter overflow-x-hidden">
+    <div className="bg-[#030706] text-white font-inter overflow-x-hidden min-h-screen">
       {/* Contact Modal */}
       <ContactModal 
         isOpen={isContactModalOpen} 

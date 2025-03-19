@@ -17,7 +17,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
 
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
-      <div className="bg-black border border-gray-800 rounded-lg p-6 md:p-8 w-[90vw] sm:w-[450px] md:w-[550px] text-white">
+      <div className="bg-[#030706] border border-gray-800 rounded-lg p-6 md:p-8 w-[90vw] sm:w-[450px] md:w-[550px] text-white">
         <h2 className="text-[24px] sm:text-[28px] md:text-[32px] font-medium tracking-tight mb-4">Contact Bianhua</h2>
         <p className="text-[14px] sm:text-[15px] md:text-[16.59px] leading-[22px] sm:leading-[24px] md:leading-[27px] tracking-normal font-medium text-[#808080] mb-6">
           Fill out this form and we'll get back to you as soon as possible.
@@ -29,7 +29,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
             <input
               type="text"
               id="name"
-              className="w-full bg-black border border-gray-700 rounded-md p-3 focus:outline-none focus:ring-1 focus:ring-white text-[14px] sm:text-[15px]"
+              className="w-full bg-[#030706] border border-gray-700 rounded-md p-3 focus:outline-none focus:ring-1 focus:ring-white text-[14px] sm:text-[15px]"
               placeholder="Your name"
               required
             />
@@ -40,7 +40,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
             <input
               type="email"
               id="email"
-              className="w-full bg-black border border-gray-700 rounded-md p-3 focus:outline-none focus:ring-1 focus:ring-white text-[14px] sm:text-[15px]"
+              className="w-full bg-[#030706] border border-gray-700 rounded-md p-3 focus:outline-none focus:ring-1 focus:ring-white text-[14px] sm:text-[15px]"
               placeholder="your.email@example.com"
               required
             />
@@ -51,7 +51,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
             <textarea
               id="message"
               rows={4}
-              className="w-full bg-black border border-gray-700 rounded-md p-3 focus:outline-none focus:ring-1 focus:ring-white resize-none text-[14px] sm:text-[15px]"
+              className="w-full bg-[#030706] border border-gray-700 rounded-md p-3 focus:outline-none focus:ring-1 focus:ring-white resize-none text-[14px] sm:text-[15px]"
               placeholder="How can we help you?"
               required
             ></textarea>

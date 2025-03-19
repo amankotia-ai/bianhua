@@ -39,7 +39,7 @@ export function Modal({ isOpen, onClose, children }: ModalProps) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 bg-black bg-opacity-80 z-50 flex items-center justify-center"
+            className="fixed inset-0 bg-[#030706] bg-opacity-80 z-50 flex items-center justify-center"
             onClick={onClose}
           >
             {/* Modal content */}
@@ -56,7 +56,7 @@ export function Modal({ isOpen, onClose, children }: ModalProps) {
               {/* Close button */}
               <button
                 onClick={onClose}
-                className="absolute top-3 right-3 bg-black bg-opacity-60 hover:bg-opacity-80 text-white p-2 rounded-full transition-colors"
+                className="absolute top-3 right-3 bg-[#030706] bg-opacity-60 hover:bg-opacity-80 text-white p-2 rounded-full transition-colors"
                 aria-label="Close modal"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
