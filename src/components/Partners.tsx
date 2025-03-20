@@ -143,7 +143,7 @@ export function Partners() {
               {/* Second row */}
               <motion.div 
                 variants={fadeInVariants}
-                className="flex items-center justify-center py-8 px-6 border-r border-white/10"
+                className="flex items-center justify-center py-8 px-6 border-r border-b md:border-b-0 border-white/10"
               >
                 <div className="w-32 sm:w-40 h-10 flex items-center justify-center">
                   <span className="text-white text-xl font-bold">Raycast</span>
@@ -151,7 +151,7 @@ export function Partners() {
               </motion.div>
               <motion.div 
                 variants={fadeInVariants}
-                className="flex items-center justify-center py-8 px-6 border-r border-white/10"
+                className="flex items-center justify-center py-8 px-6 border-r border-b md:border-b-0 border-white/10"
               >
                 <div className="w-32 sm:w-40 h-10 flex items-center justify-center">
                   <span className="text-white text-xl font-bold">SUPERCELL</span>
@@ -159,7 +159,7 @@ export function Partners() {
               </motion.div>
               <motion.div 
                 variants={fadeInVariants}
-                className="flex items-center justify-center py-8 px-6 border-r border-white/10"
+                className="flex items-center justify-center py-8 px-6 border-r border-b md:border-b-0 border-white/10"
               >
                 <div className="w-32 sm:w-40 h-10 flex items-center justify-center">
                   <span className="text-white text-xl font-bold">Retool</span>
@@ -167,7 +167,7 @@ export function Partners() {
               </motion.div>
               <motion.div 
                 variants={fadeInVariants}
-                className="flex items-center justify-center py-8 px-6"
+                className="flex items-center justify-center py-8 px-6 border-b md:border-b-0 border-white/10"
               >
                 <div className="w-32 sm:w-40 h-10 flex items-center justify-center">
                   <span className="text-white text-xl font-bold">MERCURY</span>
