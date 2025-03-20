@@ -44,10 +44,10 @@ export function Testimonials() {
   const testimonialOpacity = useTransform(
     scrollY,
     [
-      testimonialSectionY - windowHeight * 0.8, // Start fading in
-      testimonialSectionY - windowHeight * 0.3, // Fully visible
-      testimonialSectionY + windowHeight * 0.5, // Start fading out
-      testimonialSectionY + windowHeight * 0.9  // Fully invisible
+      testimonialSectionY - windowHeight * 0.9, // Start fading in (increased from 0.8)
+      testimonialSectionY - windowHeight * 0.5, // Fully visible (increased from 0.3)
+      testimonialSectionY + windowHeight * 0.3, // Start fading out (decreased from 0.5)
+      testimonialSectionY + windowHeight * 0.7  // Fully invisible (decreased from 0.9)
     ],
     [0, 1, 1, 0]
   );
@@ -79,7 +79,7 @@ export function Testimonials() {
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-20% 0px -20% 0px" }}
+          viewport={{ once: true, margin: "-10% 0px -10% 0px" }}
           onAnimationComplete={() => setHasTestimonialShownOnce(true)}
           variants={{
             hidden: { opacity: 0 },

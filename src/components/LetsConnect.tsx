@@ -45,10 +45,10 @@ export function LetsConnect() {
   const connectOpacity = useTransform(
     scrollY,
     [
-      connectSectionY - windowHeight * 0.8, // Start fading in
-      connectSectionY - windowHeight * 0.3, // Fully visible
-      connectSectionY + windowHeight * 0.5, // Start fading out
-      connectSectionY + windowHeight * 0.9  // Fully invisible
+      connectSectionY - windowHeight * 0.9, // Start fading in (increased from 0.8)
+      connectSectionY - windowHeight * 0.5, // Fully visible (increased from 0.3)
+      connectSectionY + windowHeight * 0.3, // Start fading out (decreased from 0.5)
+      connectSectionY + windowHeight * 0.7  // Fully invisible (decreased from 0.9)
     ],
     [0, 1, 1, 0]
   );
@@ -80,7 +80,7 @@ export function LetsConnect() {
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-20% 0px -20% 0px" }}
+          viewport={{ once: true, margin: "-10% 0px -10% 0px" }}
           onAnimationComplete={() => setHasConnectShownOnce(true)}
           variants={{
             hidden: { opacity: 0 },

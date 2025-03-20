@@ -88,10 +88,10 @@ function App() {
   const expertiseOpacity = useTransform(
     scrollY,
     [
-      expertiseSectionY - windowHeight * 0.8, // Start fading in
-      expertiseSectionY - windowHeight * 0.3, // Fully visible
-      expertiseSectionY + windowHeight * 0.5, // Start fading out
-      expertiseSectionY + windowHeight * 0.9  // Fully invisible
+      expertiseSectionY - windowHeight * 0.9, // Start fading in (increased from 0.8)
+      expertiseSectionY - windowHeight * 0.5, // Fully visible (increased from 0.3)
+      expertiseSectionY + windowHeight * 0.3, // Start fading out (decreased from 0.5)
+      expertiseSectionY + windowHeight * 0.7  // Fully invisible (decreased from 0.9)
     ],
     [0, 1, 1, 0]
   );
@@ -100,10 +100,10 @@ function App() {
   const aboutOpacity = useTransform(
     scrollY,
     [
-      aboutSectionY - windowHeight * 0.8, // Start fading in
-      aboutSectionY - windowHeight * 0.3, // Fully visible
-      aboutSectionY + windowHeight * 0.5, // Start fading out
-      aboutSectionY + windowHeight * 0.9  // Fully invisible
+      aboutSectionY - windowHeight * 0.9, // Start fading in (increased from 0.8)
+      aboutSectionY - windowHeight * 0.5, // Fully visible (increased from 0.3)
+      aboutSectionY + windowHeight * 0.3, // Start fading out (decreased from 0.5)
+      aboutSectionY + windowHeight * 0.7  // Fully invisible (decreased from 0.9)
     ],
     [0, 1, 1, 0]
   );
@@ -276,7 +276,7 @@ function App() {
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-20% 0px -20% 0px" }}
+            viewport={{ once: true, margin: "-10% 0px -10% 0px" }}
             onAnimationComplete={() => setHasAboutShownOnce(true)}
             variants={{
               hidden: { opacity: 0 },
@@ -370,7 +370,7 @@ function App() {
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-20% 0px -20% 0px" }}
+            viewport={{ once: true, margin: "-10% 0px -10% 0px" }}
             onAnimationComplete={() => setHasExpertiseShownOnce(true)}
             variants={{
               hidden: { opacity: 0 },

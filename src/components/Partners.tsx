@@ -44,10 +44,10 @@ export function Partners() {
   const partnersOpacity = useTransform(
     scrollY,
     [
-      partnersSectionY - windowHeight * 0.8, // Start fading in
-      partnersSectionY - windowHeight * 0.3, // Fully visible
-      partnersSectionY + windowHeight * 0.5, // Start fading out
-      partnersSectionY + windowHeight * 0.9  // Fully invisible
+      partnersSectionY - windowHeight * 0.9, // Start fading in (increased from 0.8)
+      partnersSectionY - windowHeight * 0.5, // Fully visible (increased from 0.3)
+      partnersSectionY + windowHeight * 0.3, // Start fading out (decreased from 0.5)
+      partnersSectionY + windowHeight * 0.7  // Fully invisible (decreased from 0.9)
     ],
     [0, 1, 1, 0]
   );
@@ -79,7 +79,7 @@ export function Partners() {
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-20% 0px -20% 0px" }}
+          viewport={{ once: true, margin: "-10% 0px -10% 0px" }}
           onAnimationComplete={() => setHasPartnersShownOnce(true)}
           variants={{
             hidden: { opacity: 0 },
