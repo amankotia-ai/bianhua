@@ -157,7 +157,7 @@ function App() {
   const words2 = text2.split(" ");
 
   return (
-    <div className="bg-[#030706] text-white font-inter overflow-x-hidden min-h-screen">
+    <div className="bg-[#030706] text-white font-inter overflow-x-hidden min-h-screen antialiased">
       {/* Contact Modal */}
       <ContactModal 
         isOpen={isContactModalOpen} 
@@ -332,21 +332,21 @@ function App() {
               className="flex flex-row justify-between gap-4 py-0 sm:py-2 md:py-4"
             >
               {/* 80+ */}
-              <motion.div variants={fadeInUpVariants} className="flex flex-col items-center">
+              <motion.div variants={fadeInUpVariants} className="flex flex-col items-start">
                 <span className="text-[36px] sm:text-[65px] md:text-[80px] font-light tracking-tighter">80<sup>+</sup></span>
-                <span className="text-[12px] sm:text-[15px] md:text-[16.59px] font-medium text-center">Satisfied Clients</span>
+                <span className="text-[12px] sm:text-[15px] md:text-[16.59px] font-medium text-left">Satisfied Clients</span>
               </motion.div>
               
               {/* 60+ */}
-              <motion.div variants={fadeInUpVariants} className="flex flex-col items-center">
+              <motion.div variants={fadeInUpVariants} className="flex flex-col items-start">
                 <span className="text-[36px] sm:text-[65px] md:text-[80px] font-light tracking-tighter">60<sup>+</sup></span>
-                <span className="text-[12px] sm:text-[15px] md:text-[16.59px] font-medium text-center">Workshops Delivered</span>
+                <span className="text-[12px] sm:text-[15px] md:text-[16.59px] font-medium text-left">Workshops Delivered</span>
               </motion.div>
               
               {/* 1000+ */}
-              <motion.div variants={fadeInUpVariants} className="flex flex-col items-center">
+              <motion.div variants={fadeInUpVariants} className="flex flex-col items-start">
                 <span className="text-[36px] sm:text-[65px] md:text-[80px] font-light tracking-tighter">1000<sup>+</sup></span>
-                <span className="text-[12px] sm:text-[15px] md:text-[16.59px] font-medium text-center">Individuals Trained</span>
+                <span className="text-[12px] sm:text-[15px] md:text-[16.59px] font-medium text-left">Individuals Trained</span>
               </motion.div>
             </motion.div>
           </motion.div>
