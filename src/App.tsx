@@ -291,7 +291,7 @@ function App() {
               variants={fadeInUpVariants}
               className="text-[14px] sm:text-[15px] md:text-[16.59px] leading-[22px] sm:leading-[24px] md:leading-[27px] tracking-normal font-medium"
             >
-              She works with individuals and corporate teams to elevate your executive presence, refine your communication, and build the confidence that fuels lasting impact.
+              She works with individuals and corporate teams to elevate their executive presence, refine their communication, and build the confidence that fuels lasting impact.
             </motion.p>
             
             {/* Third paragraph */}
@@ -299,7 +299,7 @@ function App() {
               variants={fadeInUpVariants}
               className="text-[14px] sm:text-[15px] md:text-[16.59px] leading-[22px] sm:leading-[24px] md:leading-[27px] tracking-normal font-medium"
             >
-              What sets her approach apart is that she doesn't just focus on appearance — she helps you align your inner confidence with your outer presentation, so you project authenticity and authority.
+              What sets her approach apart is that she doesn't just focus on appearance — she helps align the inner confidence with the outer presentation, so her clients can project authenticity authority & grace.
             </motion.p>
             
             {/* Fourth paragraph */}
