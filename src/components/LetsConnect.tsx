@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { motion, Variants, useScroll, useTransform } from 'framer-motion';
-import { Instagram, Linkedin, Mail, Phone } from 'lucide-react';
+import { UserPlus, Linkedin, Mail, Phone } from 'lucide-react';
 
 export function LetsConnect() {
   const { scrollY } = useScroll();
@@ -9,6 +9,28 @@ export function LetsConnect() {
   const connectSectionRef = useRef<HTMLElement>(null);
   const connectContentRef = useRef<HTMLDivElement>(null);
   const [hasConnectShownOnce, setHasConnectShownOnce] = useState(false);
+  
+  // Function to generate and download vCard
+  const handleAddToContact = () => {
+    const vCard = `BEGIN:VCARD
+VERSION:3.0
+FN:Jyoti Pathania Salwan
+N:Salwan;Jyoti;Pathania;;
+TITLE:Image and Etiquette Coach
+TEL;TYPE=CELL:+919769370964
+EMAIL:jo.pathania@gmail.com
+END:VCARD`;
+
+    const blob = new Blob([vCard], { type: 'text/vcard' });
+    const url = window.URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'Jyoti_Pathania_Salwan.vcf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    window.URL.revokeObjectURL(url);
+  };
   
   // Update window height on client side
   useEffect(() => {
@@ -106,7 +128,7 @@ export function LetsConnect() {
             variants={fadeInVariants}
             className="text-[14px] sm:text-[15px] md:text-[16.59px] leading-[22px] sm:leading-[24px] md:leading-[27px] tracking-normal font-medium"
           >
-            Join hands with Bianhua and embark on a journey of transformation with Jyoti, your guide to being the best version of yourself. Elevate your image and skills today.
+            Ready to transform your professional presence? Connect with Jyoti to discover how you can elevate your image, refine your communication, and unlock your full potential.
           </motion.p>
           
           {/* Contact Information */}
@@ -130,17 +152,15 @@ export function LetsConnect() {
             variants={fadeInVariants}
             className="flex gap-3"
           >
-            <a 
-              href="https://www.instagram.com/" 
-              target="_blank" 
-              rel="noopener noreferrer"
+            <button 
+              onClick={handleAddToContact}
               className="flex items-center justify-center gap-2 w-full bg-[#161616] hover:bg-[#1c1c1c] text-white py-3 px-4 rounded-lg transition-colors text-sm"
             >
-              <Instagram className="h-4 w-4" />
-              <span>Instagram</span>
-            </a>
+              <UserPlus className="h-4 w-4" />
+              <span>Add to Contact</span>
+            </button>
             <a 
-              href="https://www.linkedin.com/" 
+              href="https://www.linkedin.com/in/jyoti-pathania-salwan-0ab4b678/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 w-full bg-[#161616] hover:bg-[#1c1c1c] text-white py-3 px-4 rounded-lg transition-colors text-sm"

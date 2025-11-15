@@ -1,6 +1,6 @@
 import React from 'react';
 import { Modal } from './ui/modal';
-import { Calendar, Mail, X, Copy, Instagram } from 'lucide-react';
+import { Phone, Mail, X, Copy, UserPlus } from 'lucide-react';
 
 interface ContactModalProps {
   isOpen: boolean;
@@ -9,8 +9,35 @@ interface ContactModalProps {
 
 export function ContactModal({ isOpen, onClose }: ContactModalProps) {
   const handleEmailCopy = () => {
-    navigator.clipboard.writeText('jo@bianhua.biz');
+    navigator.clipboard.writeText('jo.pathania@gmail.com');
     // Could add toast notification here
+  };
+
+  const handlePhoneCopy = () => {
+    navigator.clipboard.writeText('+91 9769370964');
+    // Could add toast notification here
+  };
+
+  // Function to generate and download vCard
+  const handleAddToContact = () => {
+    const vCard = `BEGIN:VCARD
+VERSION:3.0
+FN:Jyoti Pathania Salwan
+N:Salwan;Jyoti;Pathania;;
+TITLE:Image and Etiquette Coach
+TEL;TYPE=CELL:+919769370964
+EMAIL:jo.pathania@gmail.com
+END:VCARD`;
+
+    const blob = new Blob([vCard], { type: 'text/vcard' });
+    const url = window.URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'Jyoti_Pathania_Salwan.vcf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    window.URL.revokeObjectURL(url);
   };
 
   return (
@@ -34,7 +61,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
             <div className="flex items-center justify-between bg-[#161616] rounded-lg p-3">
               <div className="flex items-center gap-2">
                 <Mail className="text-gray-400" size={16} />
-                <span className="text-sm text-gray-200">jo@bianhua.biz</span>
+                <span className="text-sm text-gray-200">jo.pathania@gmail.com</span>
               </div>
               <div className="flex">
                 <button 
@@ -45,7 +72,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
                   <Copy size={14} />
                 </button>
                 <a 
-                  href="mailto:jo@bianhua.biz"
+                  href="mailto:jo.pathania@gmail.com"
                   className="p-1.5 text-gray-500 hover:text-white transition-colors"
                   aria-label="Send email"
                 >
@@ -55,30 +82,46 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
             </div>
           </div>
           
-          {/* Book a time section */}
+          {/* Phone section */}
           <div className="mb-6">
-            <h3 className="text-sm font-medium mb-3 text-gray-400">Book a time</h3>
-            <button className="flex items-center justify-center gap-2 w-full bg-[#161616] hover:bg-[#1c1c1c] text-white py-3 px-4 rounded-lg transition-colors text-sm">
-              <Calendar className="h-4 w-4" />
-              <span>Book a time</span>
-            </button>
+            <h3 className="text-sm font-medium mb-3 text-gray-400">Phone</h3>
+            <div className="flex items-center justify-between bg-[#161616] rounded-lg p-3">
+              <div className="flex items-center gap-2">
+                <Phone className="text-gray-400" size={16} />
+                <span className="text-sm text-gray-200">+91 9769370964</span>
+              </div>
+              <div className="flex">
+                <button 
+                  onClick={handlePhoneCopy}
+                  className="p-1.5 text-gray-500 hover:text-white transition-colors"
+                  aria-label="Copy phone"
+                >
+                  <Copy size={14} />
+                </button>
+                <a 
+                  href="tel:+919769370964"
+                  className="p-1.5 text-gray-500 hover:text-white transition-colors"
+                  aria-label="Call phone"
+                >
+                  <Phone size={14} />
+                </a>
+              </div>
+            </div>
           </div>
           
           {/* Stay in touch section */}
           <div>
             <h3 className="text-sm font-medium mb-3 text-gray-400">Stay in touch</h3>
             <div className="flex gap-3">
-              <a 
-                href="https://www.instagram.com/bianhua_official_/" 
-                target="_blank" 
-                rel="noopener noreferrer"
+              <button 
+                onClick={handleAddToContact}
                 className="flex items-center justify-center gap-2 w-full bg-[#161616] hover:bg-[#1c1c1c] text-white py-3 px-4 rounded-lg transition-colors text-sm"
               >
-                <Instagram className="h-4 w-4" />
-                <span>Instagram</span>
-              </a>
+                <UserPlus className="h-4 w-4" />
+                <span>Save Contact</span>
+              </button>
               <a 
-                href="https://www.linkedin.com/in/jyoti-pathania-salwan-0ab4b678" 
+                href="https://www.linkedin.com/in/jyoti-pathania-salwan-0ab4b678/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 w-full bg-[#161616] hover:bg-[#1c1c1c] text-white py-3 px-4 rounded-lg transition-colors text-sm"

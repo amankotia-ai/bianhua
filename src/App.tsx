@@ -4,11 +4,11 @@ import '@fontsource/inter';
 import '@fontsource/inter/500.css';
 import '@fontsource/inter/600.css';
 import { ArrowRight, Image, Award, Briefcase, GraduationCap, Shirt, Smile, MessageSquare, Palette, Users, CircleDot, Building, HeadphonesIcon, Video, Scissors } from 'lucide-react';
-import { AnimatedGroupPreset } from './components/AnimatedGroupDemo';
 import { ContactModal } from './components/ContactModal';
 import { Testimonials } from './components/Testimonials';
 import { Partners } from './components/Partners';
 import { LetsConnect } from './components/LetsConnect';
+import { ImageCarousel } from './components/ImageCarousel';
 
 function App() {
   const { scrollY } = useScroll();
@@ -150,7 +150,7 @@ function App() {
   };
 
   const text1 = "Jyoti is an Image, Etiquette, and Soft Skills coach with over two decades of experience.";
-  const text2 = "She is a NABET and Scottish Qualifications Authority certified trainer. Bianhua was founded on the firm belief in 'metamorphosis'.";
+  const text2 = "She is a NABET and Scottish Qualifications Authority certified trainer dedicated to helping individuals and organizations unlock their full potential.";
 
   // Split texts into words
   const words1 = text1.split(" ");
@@ -169,28 +169,6 @@ function App() {
         style={{ opacity: heroOpacity }}
         className="h-screen relative"
       >
-        {/* Navigation */}
-        <nav className="absolute top-0 w-full flex justify-between items-center p-4 sm:p-6 z-20">
-          <motion.div 
-            className="w-6 h-6 sm:w-7 sm:h-7 bg-white rounded-full flex items-center justify-center"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            {/* White circle as logo */}
-          </motion.div>
-          <motion.div 
-            className="flex gap-4 sm:gap-8"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <a href="#" className="text-xs sm:text-sm hover:text-gray-300 transition-colors">About</a>
-            <a href="#" className="text-xs sm:text-sm hover:text-gray-300 transition-colors">Community</a>
-            <a href="#" className="text-xs sm:text-sm hover:text-gray-300 transition-colors">Stack</a>
-          </motion.div>
-        </nav>
-
         {/* Main Content */}
         <div className="relative h-full flex items-center justify-center">
           <motion.div
@@ -252,12 +230,15 @@ function App() {
                 className="w-auto px-4 sm:px-6 py-2 text-[14px] font-semibold sm:text-[16px] border border-white rounded-full hover:bg-white hover:text-black transition-colors whitespace-nowrap"
                 onClick={() => setIsContactModalOpen(true)}
               >
-                Contact Bianhua
+                Get in Touch
               </button>
-              <button className="w-auto px-4 sm:px-6 py-2 text-[14px] font-semibold sm:text-[16px] flex items-center justify-center gap-1 sm:gap-2 hover:text-gray-300 transition-colors whitespace-nowrap">
+              <a 
+                href="#expertise"
+                className="w-auto px-4 sm:px-6 py-2 text-[14px] font-semibold sm:text-[16px] flex items-center justify-center gap-1 sm:gap-2 hover:text-gray-300 transition-colors whitespace-nowrap"
+              >
                 View Expertise
                 <ArrowRight className="w-3 h-3 sm:w-5 sm:h-5" />
-              </button>
+              </a>
             </motion.div>
           </div>
         </div>
@@ -267,7 +248,7 @@ function App() {
       <motion.section
         ref={aboutSectionRef}
         style={{ opacity: aboutOpacity }}
-        className="min-h-[70vh] sm:min-h-[85vh] md:min-h-screen py-8 pb-0 sm:pb-2 md:pb-6 sm:py-12 md:py-16 px-2 sm:px-8 md:px-16"
+        className="min-h-[70vh] sm:min-h-[85vh] md:min-h-screen py-8 sm:py-12 md:py-16 px-2 sm:px-8 md:px-16"
       >
         <div 
           ref={aboutContentRef}
@@ -294,7 +275,7 @@ function App() {
               variants={fadeInUpVariants}
               className="text-[24px] sm:text-[28px] md:text-[32px] font-medium tracking-tight"
             >
-              About Bianhua
+              About Jyoti
             </motion.h2>
             
             {/* First paragraph */}
@@ -302,7 +283,7 @@ function App() {
               variants={fadeInUpVariants}
               className="text-[14px] sm:text-[15px] md:text-[16.59px] leading-[22px] sm:leading-[24px] md:leading-[27px] tracking-normal font-medium"
             >
-              While her personal journey began on a different path, the serendipitous discovery of the Daoist Buddhist word "Bianhua" (meaning metamorphosis) solidified her dream of training people in the transformation of their own images — from their self-perception and emotions to the visual impressions they project in personal, professional, and business settings.
+              Jyoti Pathania Salwan is an Image and Etiquette Coach who helps professionals and leaders present their best selves — inside and out.
             </motion.p>
             
             {/* Second paragraph */}
@@ -310,7 +291,31 @@ function App() {
               variants={fadeInUpVariants}
               className="text-[14px] sm:text-[15px] md:text-[16.59px] leading-[22px] sm:leading-[24px] md:leading-[27px] tracking-normal font-medium"
             >
-              Bianhua is a training company that specializes in Image Management and Soft Skills training for individuals, facilitators, and management across all industries. Jyoti understands that any metamorphosis is a journey, emphasizing her role as a guide to inspire individuals to be the best versions of themselves.
+              She works with individuals and corporate teams to elevate your executive presence, refine your communication, and build the confidence that fuels lasting impact.
+            </motion.p>
+            
+            {/* Third paragraph */}
+            <motion.p 
+              variants={fadeInUpVariants}
+              className="text-[14px] sm:text-[15px] md:text-[16.59px] leading-[22px] sm:leading-[24px] md:leading-[27px] tracking-normal font-medium"
+            >
+              What sets her approach apart is that she doesn't just focus on appearance — she helps you align your inner confidence with your outer presentation, so you project authenticity and authority.
+            </motion.p>
+            
+            {/* Fourth paragraph */}
+            <motion.p 
+              variants={fadeInUpVariants}
+              className="text-[14px] sm:text-[15px] md:text-[16.59px] leading-[22px] sm:leading-[24px] md:leading-[27px] tracking-normal font-medium"
+            >
+              With a strong background in Grooming & Soft Skills, Jyoti brings both strategy and substance to every session.
+            </motion.p>
+            
+            {/* Fifth paragraph */}
+            <motion.p 
+              variants={fadeInUpVariants}
+              className="text-[14px] sm:text-[15px] md:text-[16.59px] leading-[22px] sm:leading-[24px] md:leading-[27px] tracking-normal font-medium"
+            >
+              Her clients have reported a stronger leadership presence, improved client relationships, and greater career visibility within months of working with her.
             </motion.p>
             
             {/* Stats */}
@@ -348,20 +353,15 @@ function App() {
         </div>
       </motion.section>
 
-      {/* Animated Group Examples Section */}
-      <section className="py-0 sm:py-4 md:py-8">
-        <div className="px-1 sm:px-8 md:px-16 mx-auto">
-          <div className="max-w-[98%] sm:max-w-[80%] md:max-w-full mx-auto">
-            <AnimatedGroupPreset />
-          </div>
-        </div>
-      </section>
+      {/* Image Carousel Section */}
+      <ImageCarousel />
 
       {/* Areas of Expertise Section */}
       <motion.section 
+        id="expertise"
         ref={expertiseSectionRef}
         style={{ opacity: expertiseOpacity }}
-        className="min-h-fit py-12 sm:py-16 md:py-20 px-2 sm:px-8 md:px-16 bg-[#030706]"
+        className="min-h-fit pt-4 sm:pt-8 md:pt-12 pb-8 sm:pb-12 md:pb-16 px-2 sm:px-8 md:px-16 bg-[#030706] scroll-mt-16"
       >
         <div 
           ref={expertiseContentRef} 
@@ -495,7 +495,7 @@ function App() {
                 className="w-auto px-4 sm:px-6 py-2 text-[14px] font-semibold sm:text-[16px] border border-white rounded-full hover:bg-white hover:text-black transition-colors"
                 onClick={() => setIsContactModalOpen(true)}
               >
-                Contact Bianhua
+                Get in Touch
               </button>
             </motion.div>
           </motion.div>

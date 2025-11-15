@@ -107,70 +107,110 @@ export function Partners() {
           >
             <div className="grid grid-cols-2 md:grid-cols-4">
               {/* First row */}
+              {/* 2gethr */}
               <motion.div 
                 variants={fadeInVariants}
                 className="flex items-center justify-center py-8 px-6 border-r border-b border-white/10"
               >
-                <div className="w-32 sm:w-40 h-10 flex items-center justify-center">
-                  <span className="text-white text-xl font-bold">OpenAI</span>
+                <div className="w-28 sm:w-32 h-8 flex items-center justify-center">
+                  <img 
+                    src="/client-logos/logo-1.png" 
+                    alt="2gethr" 
+                    className="max-w-full max-h-full object-contain"
+                  />
                 </div>
               </motion.div>
+              {/* Laudco Media */}
               <motion.div 
                 variants={fadeInVariants}
                 className="flex items-center justify-center py-8 px-6 border-r border-b border-white/10"
               >
-                <div className="w-32 sm:w-40 h-10 flex items-center justify-center">
-                  <span className="text-white text-xl font-bold">Brex</span>
+                <div className="w-24 sm:w-28 h-8 flex items-center justify-center">
+                  <img 
+                    src="/client-logos/logo-2.png" 
+                    alt="Laudco Media" 
+                    className="max-w-full max-h-full object-contain"
+                  />
                 </div>
               </motion.div>
+              {/* PNRAO */}
               <motion.div 
                 variants={fadeInVariants}
                 className="flex items-center justify-center py-8 px-6 border-r border-b border-white/10"
               >
-                <div className="w-32 sm:w-40 h-10 flex items-center justify-center">
-                  <span className="text-white text-xl font-bold">LUSH</span>
+                <div className="w-20 sm:w-24 h-10 flex items-center justify-center">
+                  <img 
+                    src="/client-logos/logo-3.png" 
+                    alt="PNRAO" 
+                    className="max-w-full max-h-full object-contain"
+                  />
                 </div>
               </motion.div>
+              {/* Legato */}
               <motion.div 
                 variants={fadeInVariants}
                 className="flex items-center justify-center py-8 px-6 border-b border-white/10"
               >
-                <div className="w-32 sm:w-40 h-10 flex items-center justify-center">
-                  <span className="text-white text-xl font-bold">monzo</span>
+                <div className="w-32 sm:w-36 h-8 flex items-center justify-center">
+                  <img 
+                    src="/client-logos/logo-4.png" 
+                    alt="Legato" 
+                    className="max-w-full max-h-full object-contain"
+                  />
                 </div>
               </motion.div>
               
               {/* Second row */}
+              {/* AceEngage */}
               <motion.div 
                 variants={fadeInVariants}
                 className="flex items-center justify-center py-8 px-6 border-r border-b md:border-b-0 border-white/10"
               >
-                <div className="w-32 sm:w-40 h-10 flex items-center justify-center">
-                  <span className="text-white text-xl font-bold">Raycast</span>
+                <div className="w-28 sm:w-32 h-10 flex items-center justify-center">
+                  <img 
+                    src="/client-logos/logo-5.png" 
+                    alt="AceEngage" 
+                    className="max-w-full max-h-full object-contain"
+                  />
                 </div>
               </motion.div>
+              {/* Wowlabz */}
               <motion.div 
                 variants={fadeInVariants}
                 className="flex items-center justify-center py-8 px-6 border-r border-b md:border-b-0 border-white/10"
               >
-                <div className="w-32 sm:w-40 h-10 flex items-center justify-center">
-                  <span className="text-white text-xl font-bold">SUPERCELL</span>
+                <div className="w-28 sm:w-32 h-8 flex items-center justify-center">
+                  <img 
+                    src="/client-logos/logo-6.png" 
+                    alt="Wowlabz" 
+                    className="max-w-full max-h-full object-contain"
+                  />
                 </div>
               </motion.div>
+              {/* RMZ Galleria */}
               <motion.div 
                 variants={fadeInVariants}
                 className="flex items-center justify-center py-8 px-6 border-r border-b md:border-b-0 border-white/10"
               >
-                <div className="w-32 sm:w-40 h-10 flex items-center justify-center">
-                  <span className="text-white text-xl font-bold">Retool</span>
+                <div className="w-32 sm:w-36 h-8 flex items-center justify-center">
+                  <img 
+                    src="/client-logos/logo-7.png" 
+                    alt="RMZ Galleria" 
+                    className="max-w-full max-h-full object-contain"
+                  />
                 </div>
               </motion.div>
+              {/* Christ University */}
               <motion.div 
                 variants={fadeInVariants}
                 className="flex items-center justify-center py-8 px-6 border-b md:border-b-0 border-white/10"
               >
-                <div className="w-32 sm:w-40 h-10 flex items-center justify-center">
-                  <span className="text-white text-xl font-bold">MERCURY</span>
+                <div className="w-32 sm:w-36 h-10 flex items-center justify-center">
+                  <img 
+                    src="/client-logos/logo-8.png" 
+                    alt="Christ University" 
+                    className="max-w-full max-h-full object-contain"
+                  />
                 </div>
               </motion.div>
             </div>
