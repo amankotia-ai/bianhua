@@ -138,7 +138,7 @@ export function Partners() {
                 variants={fadeInVariants}
                 className="flex items-center justify-center py-8 px-6 border-r border-b border-white/10"
               >
-                <div className="w-20 sm:w-24 h-10 flex items-center justify-center">
+                <div className="w-32 sm:w-40 h-14 flex items-center justify-center">
                   <img 
                     src="/client-logos/logo-3.png" 
                     alt="PNRAO" 
@@ -151,7 +151,7 @@ export function Partners() {
                 variants={fadeInVariants}
                 className="flex items-center justify-center py-8 px-6 border-b border-white/10"
               >
-                <div className="w-32 sm:w-36 h-8 flex items-center justify-center">
+                <div className="w-40 sm:w-48 h-12 flex items-center justify-center">
                   <img 
                     src="/client-logos/logo-4.png" 
                     alt="Legato" 
