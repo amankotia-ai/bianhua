@@ -182,14 +182,14 @@ function App() {
             className="absolute inset-0 flex items-center justify-center"
           >
             <img 
-              src="https://i.ibb.co/zVNvB2k9/sz-Ho-M2-H42j-Lyqq1-IQCCgdc25c.png"
+              src="/images/hero-image.webp"
               alt="Jyoti Portrait"
-              className="h-[70vh] sm:h-[80vh] md:h-[90vh] w-auto object-contain"
+              className="h-[70vh] sm:h-[80vh] md:h-[90vh] w-auto object-contain -mt-24 sm:mt-0 pb-12 sm:pb-0"
             />
           </motion.div>
 
           {/* Text and Buttons */}
-          <div className="absolute bottom-8 sm:bottom-12 md:bottom-16 left-0 right-0 px-4 sm:px-8 md:px-16 mx-auto text-center sm:text-left sm:left-0 sm:right-auto max-w-[90%] sm:max-w-[80%] md:max-w-[32rem] z-10">
+          <div className="absolute bottom-12 sm:bottom-12 md:bottom-16 left-0 right-0 px-4 sm:px-8 md:px-16 mx-auto text-center sm:text-left sm:left-0 sm:right-auto max-w-[90%] sm:max-w-[80%] md:max-w-[32rem] z-10">
             <div className="space-y-0 mb-4 sm:mb-6">
               <motion.p 
                 className="text-[14px] sm:text-[16.59px] leading-[20px] sm:leading-[25.2px] tracking-normal font-medium"
