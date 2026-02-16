@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="black" stroke-width="2">
+  <rect width="100" height="100" fill="transparent"/>
+  <!-- Head/Hair -->
+  <path d="M50 20C40 15 30 18 25 28C20 38 22 50 30 55" fill="#3E2723" stroke="none"/> <!-- Back hair -->
+  <path d="M50 20C60 15 70 18 75 28C80 38 78 50 70 55" fill="#3E2723" stroke="none"/> <!-- Front/Side hair volume -->
+  
+  <!-- Face -->
+  <path d="M35 35C35 35 32 60 40 70C45 75 55 75 60 70C68 60 65 35 65 35" fill="#6D4C41" stroke="none"/>
+  
+  <!-- Neck/Shoulders -->
+  <path d="M40 70L30 85H70L60 70" fill="#6D4C41" stroke="none"/>
+  
+  <!-- Hair details, afro texture curls -->
+  <circle cx="30" cy="30" r="10" fill="#3E2723"/>
+  <circle cx="70" cy="30" r="10" fill="#3E2723"/>
+  <circle cx="50" cy="18" r="12" fill="#3E2723"/>
+  <circle cx="20" cy="40" r="8" fill="#3E2723"/>
+  <circle cx="80" cy="40" r="8" fill="#3E2723"/>
+</svg>
