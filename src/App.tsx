@@ -3,18 +3,62 @@ import { motion, Variants, useScroll, useTransform } from 'framer-motion';
 import '@fontsource/inter';
 import '@fontsource/inter/500.css';
 import '@fontsource/inter/600.css';
-import { ArrowRight, Image, Award, Briefcase, GraduationCap, Shirt, Smile, MessageSquare, Palette, Users, CircleDot, Building, HeadphonesIcon, Video, Scissors } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+import {
+  BrainIcon,
+  BriefcaseIcon,
+  ButterflyIcon,
+  ChalkboardTeacherIcon,
+  ChampagneIcon,
+  ChatsCircleIcon,
+  CoatHangerIcon,
+  CrownIcon,
+  EyeIcon,
+  ForkKnifeIcon,
+  GenderFemaleIcon,
+  HandHeartIcon,
+  HandshakeIcon,
+  IdentificationBadgeIcon,
+  MedalIcon,
+  PersonArmsSpreadIcon,
+  ShirtFoldedIcon,
+  SparkleIcon,
+} from '@phosphor-icons/react';
 import { ContactModal } from './components/ContactModal';
 import { Testimonials } from './components/Testimonials';
 import { Partners } from './components/Partners';
 import { LetsConnect } from './components/LetsConnect';
 import { ImageCarousel } from './components/ImageCarousel';
 
+const EXPERTISE_PILLARS = ['Image', 'Etiquette', 'Presence'];
+
+const EXPERTISE_AREAS = [
+  { label: 'Image Management & Personal Branding', Icon: IdentificationBadgeIcon },
+  { label: 'Executive Presence & Leadership Image', Icon: CrownIcon },
+  { label: 'Corporate Grooming & Professional Appearance', Icon: SparkleIcon },
+  { label: 'Business & Workplace Etiquette', Icon: HandshakeIcon },
+  { label: 'Personal Style & Wardrobe Management', Icon: CoatHangerIcon },
+  { label: 'Power Dressing & Styling', Icon: ShirtFoldedIcon },
+  { label: 'First Impressions & Personal Impact', Icon: EyeIcon },
+  { label: 'Body Language & Non-Verbal Communication', Icon: PersonArmsSpreadIcon },
+  { label: 'Communication & Interpersonal Skills', Icon: ChatsCircleIcon },
+  { label: 'Dining & Business Etiquette', Icon: ForkKnifeIcon },
+  { label: 'Social & Corporate Protocol', Icon: ChampagneIcon },
+  { label: 'Confidence & Self-Presentation', Icon: MedalIcon },
+  { label: "Women's Leadership Image & Presence", Icon: GenderFemaleIcon },
+  { label: 'Professional Presence & Workplace Behaviour', Icon: BriefcaseIcon },
+  { label: 'Enclothed Cognition & Psychology of Appearance', Icon: BrainIcon },
+  { label: 'Image Transformation & Personal Development', Icon: ButterflyIcon },
+  { label: 'Client-Facing & Patient-Facing Professionalism', Icon: HandHeartIcon },
+  { label: 'Training, Workshops & One-on-One Coaching', Icon: ChalkboardTeacherIcon },
+];
+
 function App() {
   const { scrollY } = useScroll();
   const [windowHeight, setWindowHeight] = useState(0);
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const [expertiseSectionY, setExpertiseSectionY] = useState(0);
+  const [expertiseSectionBottom, setExpertiseSectionBottom] = useState(0);
   const expertiseSectionRef = useRef<HTMLElement>(null);
   const expertiseContentRef = useRef<HTMLDivElement>(null);
   const [hasExpertiseShownOnce, setHasExpertiseShownOnce] = useState(false);
@@ -36,12 +80,14 @@ function App() {
     if (expertiseSectionRef.current) {
       const rect = expertiseSectionRef.current.getBoundingClientRect();
       setExpertiseSectionY(window.scrollY + rect.top);
+      setExpertiseSectionBottom(window.scrollY + rect.bottom);
     }
     
     const handleScroll = () => {
       if (expertiseSectionRef.current) {
         const rect = expertiseSectionRef.current.getBoundingClientRect();
         setExpertiseSectionY(window.scrollY + rect.top);
+        setExpertiseSectionBottom(window.scrollY + rect.bottom);
       }
     };
     
@@ -90,8 +136,8 @@ function App() {
     [
       expertiseSectionY - windowHeight * 0.9, // Start fading in (increased from 0.8)
       expertiseSectionY - windowHeight * 0.5, // Fully visible (increased from 0.3)
-      expertiseSectionY + windowHeight * 0.3, // Start fading out (decreased from 0.5)
-      expertiseSectionY + windowHeight * 0.7  // Fully invisible (decreased from 0.9)
+      expertiseSectionBottom - windowHeight * 0.65, // Start fading out (anchored to the bottom so the full list stays readable)
+      expertiseSectionBottom - windowHeight * 0.25  // Fully invisible
     ],
     [0, 1, 1, 0]
   );
@@ -388,93 +434,46 @@ function App() {
               variants={fadeInUpVariants}
               className="text-[24px] sm:text-[28px] md:text-[32px] font-medium tracking-tight"
             >
-              Areas of Expertise
+              Expertise
             </motion.h2>
-            
-            {/* Expertise Grid */}
-            <motion.div 
+
+            {/* Pillars */}
+            <motion.p
+              variants={fadeInUpVariants}
+              className="flex flex-row items-baseline justify-between gap-2 text-[26px] sm:text-[40px] md:text-[48px] font-light tracking-tighter"
+            >
+              {EXPERTISE_PILLARS.map((pillar, index) => (
+                <React.Fragment key={pillar}>
+                  {index > 0 && <span aria-hidden="true" className="text-white/30">&bull;</span>}
+                  <span>{pillar}</span>
+                </React.Fragment>
+              ))}
+            </motion.p>
+
+            {/* Expertise List */}
+            <motion.ul
               variants={{
                 hidden: { opacity: 0 },
                 visible: {
                   opacity: 1,
                   transition: {
-                    staggerChildren: 0.1
+                    staggerChildren: 0.05
                   }
                 }
               }}
-              className="grid grid-cols-2 gap-x-2 gap-y-6 sm:gap-x-8 sm:gap-y-8 md:gap-x-12"
+              className="border-t border-white/10"
             >
-              {/* Expertise Items */}
-              <motion.div variants={fadeInUpVariants} className="flex items-center gap-2 sm:gap-3">
-                <Image className="w-4 h-4 sm:w-5 sm:h-5" />
-                <p className="text-[14px] sm:text-[14px] md:text-[16.59px] font-medium">Image Management</p>
-              </motion.div>
-              
-              <motion.div variants={fadeInUpVariants} className="flex items-center gap-2 sm:gap-3">
-                <Award className="w-4 h-4 sm:w-5 sm:h-5" />
-                <p className="text-[14px] sm:text-[14px] md:text-[16.59px] font-medium">Executive Presence</p>
-              </motion.div>
-              
-              <motion.div variants={fadeInUpVariants} className="flex items-center gap-2 sm:gap-3">
-                <Briefcase className="w-4 h-4 sm:w-5 sm:h-5" />
-                <p className="text-[14px] sm:text-[14px] md:text-[16.59px] font-medium">Interview Skills</p>
-              </motion.div>
-              
-              <motion.div variants={fadeInUpVariants} className="flex items-center gap-2 sm:gap-3">
-                <GraduationCap className="w-4 h-4 sm:w-5 sm:h-5" />
-                <p className="text-[14px] sm:text-[14px] md:text-[16.59px] font-medium">Campus to Corporate</p>
-              </motion.div>
-              
-              <motion.div variants={fadeInUpVariants} className="flex items-center gap-2 sm:gap-3">
-                <Shirt className="w-4 h-4 sm:w-5 sm:h-5" />
-                <p className="text-[14px] sm:text-[14px] md:text-[16.59px] font-medium">Corporate Styling</p>
-              </motion.div>
-              
-              <motion.div variants={fadeInUpVariants} className="flex items-center gap-2 sm:gap-3">
-                <Smile className="w-4 h-4 sm:w-5 sm:h-5" />
-                <p className="text-[14px] sm:text-[14px] md:text-[16.59px] font-medium">First Impressions</p>
-              </motion.div>
-              
-              <motion.div variants={fadeInUpVariants} className="flex items-center gap-2 sm:gap-3">
-                <MessageSquare className="w-4 h-4 sm:w-5 sm:h-5" />
-                <p className="text-[14px] sm:text-[14px] md:text-[16.59px] font-medium">Communication</p>
-              </motion.div>
-              
-              <motion.div variants={fadeInUpVariants} className="flex items-center gap-2 sm:gap-3">
-                <Palette className="w-4 h-4 sm:w-5 sm:h-5" />
-                <p className="text-[14px] sm:text-[14px] md:text-[16.59px] font-medium">Personal Style</p>
-              </motion.div>
-              
-              <motion.div variants={fadeInUpVariants} className="flex items-center gap-2 sm:gap-3">
-                <Users className="w-4 h-4 sm:w-5 sm:h-5" />
-                <p className="text-[14px] sm:text-[14px] md:text-[16.59px] font-medium">Business Etiquette</p>
-              </motion.div>
-              
-              <motion.div variants={fadeInUpVariants} className="flex items-center gap-2 sm:gap-3">
-                <CircleDot className="w-4 h-4 sm:w-5 sm:h-5" />
-                <p className="text-[14px] sm:text-[14px] md:text-[16.59px] font-medium">Workplace Etiquette</p>
-              </motion.div>
-              
-              <motion.div variants={fadeInUpVariants} className="flex items-center gap-2 sm:gap-3">
-                <Building className="w-4 h-4 sm:w-5 sm:h-5" />
-                <p className="text-[14px] sm:text-[14px] md:text-[16.59px] font-medium">Corp. Communication</p>
-              </motion.div>
-              
-              <motion.div variants={fadeInUpVariants} className="flex items-center gap-2 sm:gap-3">
-                <HeadphonesIcon className="w-4 h-4 sm:w-5 sm:h-5" />
-                <p className="text-[14px] sm:text-[14px] md:text-[16.59px] font-medium">Listening Skills</p>
-              </motion.div>
-              
-              <motion.div variants={fadeInUpVariants} className="flex items-center gap-2 sm:gap-3">
-                <Video className="w-4 h-4 sm:w-5 sm:h-5" />
-                <p className="text-[14px] sm:text-[14px] md:text-[16.59px] font-medium">Virtual Meetings</p>
-              </motion.div>
-              
-              <motion.div variants={fadeInUpVariants} className="flex items-center gap-2 sm:gap-3">
-                <Scissors className="w-4 h-4 sm:w-5 sm:h-5" />
-                <p className="text-[14px] sm:text-[14px] md:text-[16.59px] font-medium">Bespoke Clothing</p>
-              </motion.div>
-            </motion.div>
+              {EXPERTISE_AREAS.map(({ label, Icon }) => (
+                <motion.li
+                  key={label}
+                  variants={fadeInUpVariants}
+                  className="flex items-center gap-3 sm:gap-4 py-3 sm:py-4 border-b border-white/10 text-[14px] sm:text-[15px] md:text-[16.59px] leading-[22px] sm:leading-[24px] md:leading-[27px] font-medium"
+                >
+                  <Icon weight="fill" aria-hidden="true" className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
+                  {label}
+                </motion.li>
+              ))}
+            </motion.ul>
             
             {/* Contact Button */}
             <motion.div 
