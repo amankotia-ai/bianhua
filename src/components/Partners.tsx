@@ -1,6 +1,30 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { motion, Variants, useScroll, useTransform } from 'framer-motion';
 
+// Box sizes are tuned per logo so they read at a similar visual weight
+const CLIENT_LOGOS = [
+  { name: '108 Bespoke', src: '/client-logos/logo-1.png', box: 'w-16 h-14' },
+  { name: 'Svamitva', src: '/client-logos/logo-2.png', box: 'w-12 h-12' },
+  { name: 'Lavendel Consulting', src: '/client-logos/logo-3.png', box: 'w-24 h-9' },
+  { name: 'Rashtriya Raksha University', src: '/client-logos/logo-4.png', box: 'w-14 h-14' },
+  { name: 'IBM', src: '/client-logos/logo-5.png', box: 'w-24 h-8' },
+  { name: 'AceNgage', src: '/client-logos/logo-6.png', box: 'w-28 h-10' },
+  { name: '2gethr', src: '/client-logos/logo-7.png', box: 'w-28 h-8' },
+  { name: 'RMZ Galleria', src: '/client-logos/logo-8.png', box: 'w-24 h-8' },
+  { name: 'Wowlabz', src: '/client-logos/logo-9.png', box: 'w-24 h-8' },
+  { name: 'Christ University', src: '/client-logos/logo-10.png', box: 'w-28 h-10' },
+  { name: 'Laudco Media', src: '/client-logos/logo-11.png', box: 'w-24 h-8' },
+  { name: 'Embassy Group', src: '/client-logos/logo-12.png', box: 'w-12 h-12' },
+];
+
+// Divider lines between cells: 2 columns on mobile, 4 from md up
+function cellBorders(index: number, total: number) {
+  const right = ['border-r', 'md:border-r', 'border-r', ''][index % 4];
+  const bottom =
+    index < total - 4 ? 'border-b' : index < total - 2 ? 'border-b md:border-b-0' : '';
+  return `${right} ${bottom}`;
+}
+
 export function Partners() {
   const { scrollY } = useScroll();
   const [windowHeight, setWindowHeight] = useState(0);
@@ -106,113 +130,21 @@ export function Partners() {
             className="rounded-[4px] overflow-hidden border border-white/10"
           >
             <div className="grid grid-cols-2 md:grid-cols-4">
-              {/* First row */}
-              {/* 2gethr */}
-              <motion.div 
-                variants={fadeInVariants}
-                className="flex items-center justify-center py-8 px-6 border-r border-b border-white/10"
-              >
-                <div className="w-28 sm:w-32 h-8 flex items-center justify-center">
-                  <img 
-                    src="/client-logos/logo-1.png" 
-                    alt="2gethr" 
-                    className="max-w-full max-h-full object-contain"
-                  />
-                </div>
-              </motion.div>
-              {/* Laudco Media */}
-              <motion.div 
-                variants={fadeInVariants}
-                className="flex items-center justify-center py-8 px-6 border-r border-b border-white/10"
-              >
-                <div className="w-24 sm:w-28 h-8 flex items-center justify-center">
-                  <img 
-                    src="/client-logos/logo-2.png" 
-                    alt="Laudco Media" 
-                    className="max-w-full max-h-full object-contain"
-                  />
-                </div>
-              </motion.div>
-              {/* PNRAO */}
-              <motion.div 
-                variants={fadeInVariants}
-                className="flex items-center justify-center py-8 px-6 border-r border-b border-white/10"
-              >
-                <div className="w-32 sm:w-40 h-14 flex items-center justify-center">
-                  <img 
-                    src="/client-logos/logo-3.png" 
-                    alt="PNRAO" 
-                    className="max-w-full max-h-full object-contain"
-                  />
-                </div>
-              </motion.div>
-              {/* Legato */}
-              <motion.div 
-                variants={fadeInVariants}
-                className="flex items-center justify-center py-8 px-6 border-b border-white/10"
-              >
-                <div className="w-40 sm:w-48 h-12 flex items-center justify-center">
-                  <img 
-                    src="/client-logos/logo-4.png" 
-                    alt="Legato" 
-                    className="max-w-full max-h-full object-contain"
-                  />
-                </div>
-              </motion.div>
-              
-              {/* Second row */}
-              {/* AceEngage */}
-              <motion.div 
-                variants={fadeInVariants}
-                className="flex items-center justify-center py-8 px-6 border-r border-b md:border-b-0 border-white/10"
-              >
-                <div className="w-28 sm:w-32 h-10 flex items-center justify-center">
-                  <img 
-                    src="/client-logos/logo-5.png" 
-                    alt="AceEngage" 
-                    className="max-w-full max-h-full object-contain"
-                  />
-                </div>
-              </motion.div>
-              {/* Wowlabz */}
-              <motion.div 
-                variants={fadeInVariants}
-                className="flex items-center justify-center py-8 px-6 border-r border-b md:border-b-0 border-white/10"
-              >
-                <div className="w-28 sm:w-32 h-8 flex items-center justify-center">
-                  <img 
-                    src="/client-logos/logo-6.png" 
-                    alt="Wowlabz" 
-                    className="max-w-full max-h-full object-contain"
-                  />
-                </div>
-              </motion.div>
-              {/* RMZ Galleria */}
-              <motion.div 
-                variants={fadeInVariants}
-                className="flex items-center justify-center py-8 px-6 border-r border-b md:border-b-0 border-white/10"
-              >
-                <div className="w-32 sm:w-36 h-8 flex items-center justify-center">
-                  <img 
-                    src="/client-logos/logo-7.png" 
-                    alt="RMZ Galleria" 
-                    className="max-w-full max-h-full object-contain"
-                  />
-                </div>
-              </motion.div>
-              {/* Christ University */}
-              <motion.div 
-                variants={fadeInVariants}
-                className="flex items-center justify-center py-8 px-6 border-b md:border-b-0 border-white/10"
-              >
-                <div className="w-32 sm:w-36 h-10 flex items-center justify-center">
-                  <img 
-                    src="/client-logos/logo-8.png" 
-                    alt="Christ University" 
-                    className="max-w-full max-h-full object-contain"
-                  />
-                </div>
-              </motion.div>
+              {CLIENT_LOGOS.map((logo, index) => (
+                <motion.div
+                  key={logo.src}
+                  variants={fadeInVariants}
+                  className={`flex items-center justify-center py-8 px-6 border-white/10 ${cellBorders(index, CLIENT_LOGOS.length)}`}
+                >
+                  <div className={`${logo.box} flex items-center justify-center`}>
+                    <img
+                      src={logo.src}
+                      alt={logo.name}
+                      className="max-w-full max-h-full object-contain"
+                    />
+                  </div>
+                </motion.div>
+              ))}
             </div>
           </motion.div>
         </motion.div>
